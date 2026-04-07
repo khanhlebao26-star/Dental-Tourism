@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">
+            Dental Tourism
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-primary fw-bold" href="consultation.html">Consultation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="cta-btn ms-3" href="consultation.html">Get Started</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-custom">
+
+        <h1 class="title">Get Your Dental Consultation</h1>
+
+        <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLScTbcyXxawY1RjyypXmLG9iSXFXO03-Fqu-S4Y9fONi_soghQ/formResponse"
+            method="POST" target="hidden_iframe">
+
+            <label>Name</label>
+            <input name="entry.303080444" type="text" class="form-control mb-3" placeholder="Enter your name">
+
+            <label>Country</label>
+            <input name="entry.1068912784" type="text" class="form-control mb-3" placeholder="Enter your country">
+
+            <label>Email</label>
+            <input name="entry.1766905503" type="email" class="form-control mb-3" placeholder="Enter your email">
+
+            <label>Dental Problem</label>
+            <select name="entry.675845839" class="form-control mb-3">
+                <option>Implant</option>
+                <option>Braces</option>
+                <option>Cleaning</option>
+            </select>
+
+            <label>Describe your condition</label>
+            <textarea name="entry.1541952063" class="form-control mb-3"
+                placeholder="Please describe your dental condition"></textarea>
+
+            <label>Budget</label>
+            <input name="entry.2116698482" type="text" class="form-control mb-3" placeholder="Enter your budget">
+
+            <label>Travel Time</label>
+            <input name="entry.1385620839" type="text" class="form-control mb-3" placeholder="Enter your travel time">
+
+            <button class="cta-btn w-100">Get Consultation</button>
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header">AI Assistant</div>
+        <div class="chat-body">
+            <p>Hello! How can I help you with your dental plan?</p>
+        </div>
+    </div>
+    <div class="chat-icon">
+        💬
+    </div>
+    <script>
+        const chatIcon = document.querySelector(".chat-icon");
+        const chatBox = document.getElementById("chatBox");
+
+        chatIcon.addEventListener("click", () => {
+            chatBox.style.display =
+                chatBox.style.display === "block" ? "none" : "block";
+        });
+
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", () => {
+            setTimeout(() => {
+                form.reset();
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
